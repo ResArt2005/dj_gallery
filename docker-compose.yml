@@ -1,14 +1,14 @@
 services:
   db:
     image: postgres:15
-    container_name: django_db
+    container_name: gallery_app_db
     restart: always
     environment:
-      POSTGRES_DB: django_db
+      POSTGRES_DB: gallery_app_db
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
-      - "5434:5432"
+      - "5435:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     networks:
@@ -16,7 +16,7 @@ services:
 
   web:
     build: .
-    container_name: django_app
+    container_name: gallery_app
     restart: always
     command: >
       sh -c "python manage.py migrate &&
@@ -25,7 +25,7 @@ services:
     volumes:
       - .:/app
     ports:
-      - "8001:8000"
+      - "8002:8000"
     depends_on:
       - db
     environment:
