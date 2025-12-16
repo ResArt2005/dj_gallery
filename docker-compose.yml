@@ -30,7 +30,7 @@ services:
       - db
     environment:
       - DEBUG=True
-      - DATABASE_URL=postgres://postgres:postgres@db:5432/django_db
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/gallery_app_db
     networks:
       - django_network
       
