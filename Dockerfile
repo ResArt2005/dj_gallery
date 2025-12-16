@@ -20,7 +20,7 @@ COPY . .
 RUN mkdir -p /app/static
 
 # Порт для приложения
-EXPOSE 8000
+EXPOSE 8001
 
 # Команда запуска
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "myproject.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8001", "gallery_app.wsgi:application"]
