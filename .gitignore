@@ -1,0 +1,29 @@
+# Virtual Environment
+env/
+venv/
+ENV/
+
+# Django
+*.pyc
+__pycache__/
+*.sqlite3
+*.log
+local_settings.py
+db.sqlite3
+media/
+
+# Docker
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Static files (если собираются при деплое)
+/staticfiles/

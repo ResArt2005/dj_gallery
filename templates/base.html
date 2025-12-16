@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Мой сайт{% endblock %}</title>
+    {% load static %}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="{% static 'owlcarousel/dist/assets/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'owlcarousel/dist/assets/owl.theme.default.min.css' %}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    
+    <!-- Дополнительные CSS файлы если есть -->
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    {% include 'base/header.html' %}
+    
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    
+    {% include 'base/footer.html' %}
+
+    <!-- jQuery -->
+    <script src="{% static 'jquery/jquery-3.7.1.min.js' %}"></script>
+    <!-- Bootstrap JS -->
+    <script src="{% static 'bootstrap/bootstrap.bundle.min.js' %}"></script>
+    <!-- Owl Carousel JS -->
+    <script src="{% static 'owlcarousel/dist/owl.carousel.min.js' %}"></script>
+    <!-- Custom JS -->
+    <script src="{% static 'js/script.js' %}"></script>
+    
+    <!-- Дополнительные JS файлы если есть -->
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
