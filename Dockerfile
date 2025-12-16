@@ -6,21 +6,21 @@ RUN apt-get update && apt-get install -y \
     libpq-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Установка рабочей директории
+# Рабочая директория
 WORKDIR /app
 
-# Копирование requirements и установка зависимостей
+# Установка Python-зависимостей
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Копирование проекта
 COPY . .
 
-# Создание статической папки
+# Статическая папка
 RUN mkdir -p /app/static
 
-# Порт для приложения
+# Порт приложения (документация)
 EXPOSE 8001
 
-# Команда запуска
-CMD ["gunicorn", "--bind", "0.0.0.0:8001", "gallery_app.wsgi:application"]
+# CMD оставлен для документации, реально используется command из compose
+CMD ["gunicorn", "--bind", "0.0.0.0:8001", "myproject.wsgi:application"]
