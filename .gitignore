@@ -20,7 +20,7 @@ media/
 .idea/
 *.swp
 *.swo
-
+cmd.txt
 # OS
 .DS_Store
 Thumbs.db
