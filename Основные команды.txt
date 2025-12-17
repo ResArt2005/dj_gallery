@@ -12,7 +12,7 @@ docker compose down -v
 docker compose build --no-cache
 docker compose up -d
 
-# Работа с контейнером
+# Работа с контейнерами
 docker restart gallery_app
 docker exec -it gallery_app bash
 docker exec -it gallery_app_db psql -U postgres -d gallery_app
@@ -25,3 +25,10 @@ docker compose exec web python manage.py createsuperuser
 http://localhost:8002/
 # Админка
 http://localhost:8002/mysite-admin/
+
+# Подключение к базе через DBeaver
+Зост: localhost
+База: gallery_app_db
+Пользователь: postgres
+Пароль: postgres
+Порт: 5435
