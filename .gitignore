@@ -20,10 +20,10 @@ media/
 .idea/
 *.swp
 *.swo
-cmd.txt
 # OS
 .DS_Store
 Thumbs.db
 
 # Static files (если собираются при деплое)
 /staticfiles/
+cmd.txt
