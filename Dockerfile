@@ -23,4 +23,4 @@ RUN mkdir -p /app/static
 EXPOSE 8001
 
 # CMD оставлен для документации, реально используется command из compose
-CMD ["gunicorn", "--bind", "0.0.0.0:8001", "myproject.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8001", "gallery_app.wsgi:application"]
