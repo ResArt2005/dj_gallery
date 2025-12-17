@@ -1,0 +1,27 @@
+# Создание виртуального окружения с зависимостями
+python -m venv env
+source env/bin/activate
+pip install -r requirements.txt
+
+# Вход в проект через WSL консоль
+cd /mnt/c/users/resar/Documents/GitHub/dj_gallery
+code /mnt/c/users/resar/Documents/GitHub/dj_gallery
+
+# Инициализация
+docker compose down -v
+docker compose build --no-cache
+docker compose up -d
+
+# Работа с контейнером
+docker restart gallery_app
+docker exec -it gallery_app bash
+docker exec -it gallery_app_db psql -U postgres -d gallery_app
+
+# Создание суперпользователя
+docker compose exec web python manage.py createsuperuser
+
+# Основные ссылки
+# Главная страница
+http://localhost:8002/
+# Админка
+http://localhost:8002/mysite-admin/
