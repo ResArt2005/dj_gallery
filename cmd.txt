@@ -1,4 +1,4 @@
-cd /mnt/c/users/resar/Documents/GitHub/django-project/my_site
+cd /mnt/c/users/resar/Documents/GitHub/dj_gallery
 code /mnt/c/users/resar/Documents/GitHub/django-project/my_site
 docker-compose up -d
 docker compose down
