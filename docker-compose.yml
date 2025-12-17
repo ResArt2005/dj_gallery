@@ -21,7 +21,7 @@ services:
     command: >
       sh -c "python manage.py migrate &&
              python manage.py collectstatic --noinput &&
-             gunicorn --bind 0.0.0.0:8001 gallery_app.wsgi:application"
+             gunicorn --bind 0.0.0.0:8001 gallery_project.wsgi:application"
     volumes:
       - .:/app
     ports:
